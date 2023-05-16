@@ -1,11 +1,12 @@
 import React from 'react';
 
 const ConvertedFiles = ({ files }) => {
+  console.log('inside ConvertedFiles looking at files:', files.convertedData);
   return (
     <div>
       <h2>List of Converted Files:</h2>
       <ul>
-        {files.map((file, index) => (
+        {files.convertedData.map((file, index) => (
           <li key={index}>
             <a href={file.downloadUrl} download>
               {file.name}
