@@ -1,19 +1,11 @@
 import React from 'react';
+import DownloadButton from './DownloadButton';
 
 const ConvertedFiles = ({ files }) => {
-  console.log('inside ConvertedFiles looking at files:', files.convertedData);
   return (
     <div>
-      <h2>List of Converted Files:</h2>
-      <ul>
-        {files.convertedData.map((file, index) => (
-          <li key={index}>
-            <a href={file.downloadUrl} download>
-              {file.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <h2>Download converted files:</h2>
+      <DownloadButton />
     </div>
   );
 };
