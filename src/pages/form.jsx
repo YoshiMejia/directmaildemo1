@@ -53,6 +53,12 @@ const Form = () => {
             value="template2"
             onClick={(event) => setSelectedTemplate(event.target.value)}
           />
+          <label htmlFor="700v2">700v2</label>
+          <input
+            type="checkbox"
+            value="700v2"
+            onClick={(event) => setSelectedTemplate(event.target.value)}
+          />
           <button type="submit">Convert</button>
         </form>
       </div>
