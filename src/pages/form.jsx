@@ -41,24 +41,22 @@ const Form = () => {
       <div id="csv-form">
         <form onSubmit={handleSubmit}>
           <input type="file" accept=".csv" onChange={handleFileUpload} />
-          <label htmlFor="template1">template1</label>
-          <input
-            type="checkbox"
-            value="template1"
-            onClick={(event) => setSelectedTemplate(event.target.value)}
-          />
-          <label htmlFor="template2">template2</label>
-          <input
-            type="checkbox"
-            value="template2"
-            onClick={(event) => setSelectedTemplate(event.target.value)}
-          />
-          <label htmlFor="700v2">700v2</label>
-          <input
-            type="checkbox"
-            value="700v2"
-            onClick={(event) => setSelectedTemplate(event.target.value)}
-          />
+          <select
+            value={selectedTemplate}
+            onChange={(event) => setSelectedTemplate(event.target.value)}
+          >
+            <option value="none">Select a template</option>
+            <option value="700v2">700v2</option>
+            <option value="702v2">702v2</option>
+            <option value="704v2">704v2</option>
+            <option value="706v2">706v2</option>
+            <option value="712v2">712v2</option>
+            <option value="720v2">720v2</option>
+            <option value="721v2">721v2</option>
+            <option value="731v2">731v2</option>
+            <option value="740v2">740v2</option>
+            <option value="741v2">741v2</option>
+          </select>
           <button type="submit">Convert</button>
         </form>
       </div>
