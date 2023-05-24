@@ -14,12 +14,8 @@ const DownloadButton = () => {
       const filename = contentDisposition
         ? contentDisposition.match(/filename="(.+)"/)[1]
         : 'file.zip';
-      // Create a blob from the response data
       const blob = await response.blob();
-
-      // Create a temporary URL for the blob
       const downloadUrl = URL.createObjectURL(blob);
-      // Create a link and initiate the download
       const link = document.createElement('a');
       link.href = downloadUrl;
       link.setAttribute('download', filename);
