@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import DownloadButton from '@/components/DownloadButton';
+import { NavHead } from '@/app/components/NavHead';
 
 const Form = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState('none');
   const [successfulConversion, setSuccessfulConversion] = useState(false);
+  const [viewForm, setViewForm] = useState(true);
   const [fileList, setFileList] = useState([]);
 
   const handleFileUpload = (event) => {
@@ -29,6 +31,7 @@ const Form = () => {
       const convertedData = await response.json();
       console.log(convertedData);
       setSuccessfulConversion(true);
+      handleViewForm();
       setFileList(convertedData);
       // check back if setFileList/fileList state values are needed now that download button is working, also check if ConvertedFiles component is needed
     } catch (error) {
@@ -36,36 +39,78 @@ const Form = () => {
     }
   };
 
+  const handleViewForm = () => {
+    setViewForm(!viewForm);
+    setSuccessfulConversion(!successfulConversion);
+  };
   return (
     <>
-      <div id="csv-form">
-        <form onSubmit={handleSubmit}>
-          <input type="file" accept=".csv" onChange={handleFileUpload} />
-          <select
-            value={selectedTemplate}
-            onChange={(event) => setSelectedTemplate(event.target.value)}
-          >
-            <option value="none">Select a template</option>
-            <option value="700v2">700v2</option>
-            <option value="702v2">702v2</option>
-            <option value="704v2">704v2</option>
-            <option value="706v2">706v2</option>
-            <option value="712v2">712v2</option>
-            <option value="720v2">720v2</option>
-            <option value="721v2">721v2</option>
-            <option value="731v2">731v2</option>
-            <option value="740v2">740v2</option>
-            <option value="741v2">741v2</option>
-          </select>
-          <button type="submit">Convert</button>
-        </form>
-      </div>
+      <main className="flex min-h-screen flex-col items-center p-24">
+        <NavHead />
+        {viewForm && (
+          <div className="absolute z-10 top-96 text-blue-100 text-center text-xl w-450">
+            <h2>Upload a CSV file and select a template from the list!</h2>
+          </div>
+        )}
+        {successfulConversion && (
+          <div className="absolute z-10 top-96 text-blue-100 text-center text-2xl w-450">
+            <h2>Choose an option below</h2>
+          </div>
+        )}
 
-      {successfulConversion && (
-        <div>
-          <DownloadButton />
+        <div className="cloud-img flex relative mt-20">
+          <div className="inset-0 flex items-center justify-center">
+            {viewForm && (
+              <div
+                id="csv-form"
+                className="bg-white rounded-lg p-4 space-x-4 relative top-24 left-8"
+              >
+                <form onSubmit={handleSubmit} className="border-2">
+                  <input
+                    type="file"
+                    accept=".csv"
+                    onChange={handleFileUpload}
+                    className="inline-block rounded border-success pl-6 pb-[6px] pt-2 text-s font-medium leading-normal text-success ease-in-out hover:border-success-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-success-600 focus:border-success-600 focus:text-success-600 focus:outline-none focus:ring-0 active:border-success-700 active:text-success-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                  />
+                  <select
+                    className="pr-2"
+                    value={selectedTemplate}
+                    onChange={(event) =>
+                      setSelectedTemplate(event.target.value)
+                    }
+                  >
+                    <option value="none">Select a template</option>
+                    <option value="700v2">700v2</option>
+                    <option value="702v2">702v2</option>
+                    <option value="704v2">704v2</option>
+                    <option value="706v2">706v2</option>
+                    <option value="712v2">712v2</option>
+                    <option value="720v2">720v2</option>
+                    <option value="721v2">721v2</option>
+                    <option value="731v2">731v2</option>
+                    <option value="740v2">740v2</option>
+                    <option value="741v2">741v2</option>
+                  </select>
+                  <button
+                    type="submit"
+                    className="px-6 bg-stone-100 hover:bg-blue-50 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg"
+                  >
+                    Convert
+                  </button>
+                </form>
+              </div>
+            )}
+            {successfulConversion && (
+              <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-60">
+                <DownloadButton />
+                <button className="left-8 relative" onClick={handleViewForm}>
+                  Convert more
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      )}
+      </main>
     </>
   );
 };
