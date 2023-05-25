@@ -3,12 +3,12 @@ import { NavHead } from '@/app/components/NavHead';
 
 const templates = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <NavHead />
-      <div className="flex items-center justify-center py-10 font-mono">
+    <main className="flex flex-col items-center">
+      {/* <NavHead /> */}
+      <div className="flex items-center justify-center py-10 text-2xl font-mono relative -left-4">
         <h1>Available templates</h1>
       </div>
-      <div className="grid grid-cols-3 relative left-8 gap-4">
+      <div className="grid grid-cols-3  gap-4 max-w-7xl overflow-y-auto h-75 border-solid border-8 border-slate-400">
         <div className="image-container">
           <Image
             src="/../public/701v2.png"
