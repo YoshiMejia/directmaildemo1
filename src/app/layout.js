@@ -1,14 +1,19 @@
+'use client';
 import './globals.css';
-
-export const metadata = {
-  title: 'WAConverter',
-  description: 'CSV converter for WAC Marketing Dept.',
-};
+import { NavHead } from './components/NavHead';
+import Footer from './components/Footer';
+import { SessionProvider } from 'next-auth/react';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-mono">{children}</body>
+      <body className="font-mono">
+        <SessionProvider>
+          <NavHead />
+          {children}
+          <Footer />
+        </SessionProvider>
+      </body>
     </html>
   );
 }
