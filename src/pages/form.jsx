@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DownloadButton from '@/components/DownloadButton';
+import DownloadButton from '@/pages/components/DownloadButton';
 import { NavHead } from '@/app/components/NavHead';
 
 const Form = () => {
@@ -45,8 +45,8 @@ const Form = () => {
   };
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center p-24">
-        <NavHead />
+      <main className="flex font-mono flex-col items-center">
+        {/* <NavHead /> */}
         {viewForm && (
           <div className="absolute z-10 top-96 text-blue-100 text-center text-xl w-450">
             <h2>Upload a CSV file and select a template from the list!</h2>
@@ -63,14 +63,14 @@ const Form = () => {
             {viewForm && (
               <div
                 id="csv-form"
-                className="bg-white rounded-lg p-4 space-x-4 relative top-24 left-8"
+                className="bg-white rounded-lg p-2 space-x-4 relative top-24 left-8"
               >
                 <form onSubmit={handleSubmit} className="border-2">
                   <input
                     type="file"
                     accept=".csv"
                     onChange={handleFileUpload}
-                    className="inline-block rounded border-success pl-6 pb-[6px] pt-2 text-s font-medium leading-normal text-success ease-in-out hover:border-success-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-success-600 focus:border-success-600 focus:text-success-600 focus:outline-none focus:ring-0 active:border-success-700 active:text-success-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                    className="inline-block rounded border-success pl-2 pb-[6px] pt-2 text-s font-medium leading-normal text-success ease-in-out hover:border-success-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-success-600 focus:border-success-600 focus:text-success-600 focus:outline-none focus:ring-0 active:border-success-700 active:text-success-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
                   />
                   <select
                     className="pr-2"
@@ -93,7 +93,8 @@ const Form = () => {
                   </select>
                   <button
                     type="submit"
-                    className="px-6 bg-stone-100 hover:bg-blue-50 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg"
+                    className="px-4 bg-stone-100 hover:bg-blue-50 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg"
+                    onClick={handleSubmit}
                   >
                     Convert
                   </button>
@@ -101,9 +102,9 @@ const Form = () => {
               </div>
             )}
             {successfulConversion && (
-              <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-60">
+              <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-52">
                 <DownloadButton />
-                <button className="left-8 relative" onClick={handleViewForm}>
+                <button className="left-12 relative" onClick={handleViewForm}>
                   Convert more
                 </button>
               </div>
