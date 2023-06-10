@@ -16,7 +16,7 @@ export const NavHead = () => {
         </Link>
       )}
       {pathname !== '/Form' && (
-        <Link className="text-xl" href={'/Form'}>
+        <Link className="text-xl" href={'/form'}>
           Upload CSV
         </Link>
       )}
