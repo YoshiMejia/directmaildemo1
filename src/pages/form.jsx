@@ -67,14 +67,18 @@ const Form = () => {
             {viewForm && (
               <div
                 id="csv-form"
-                className="bg-white rounded-lg p-2 space-x-4 relative top-24 left-8"
+                className="bg-white rounded-lg p-2 space-x-4 relative top-24 left-20"
               >
                 <form onSubmit={handleSubmit} className="border-2">
                   <input
                     type="file"
                     accept=".csv"
                     onChange={handleFileUpload}
-                    className="inline-block rounded border-success pl-2 pb-[6px] pt-2 text-s font-medium leading-normal text-success ease-in-out hover:border-success-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-success-600 focus:border-success-600 focus:text-success-600 focus:outline-none focus:ring-0 active:border-success-700 active:text-success-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                    className="inline-block rounded pl-2 pb-[6px] pt-2 w-60 file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-blue-100 file:text-blue-400
+      hover:file:bg-violet-100"
                   />
                   <select
                     className="pr-2"

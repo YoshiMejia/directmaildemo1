@@ -9,7 +9,7 @@ const Footer = () => {
   console.log('log data, inside Footer:', data);
 
   return (
-    <footer className="relative left-64 max-w-5xl border-t-4 mt-20 mb-16 pt-2 font-mono">
+    <footer className="relative left-44 max-w-5xl border-t-4 mt-20 mb-16 pt-2 font-mono">
       <div className="flex-row ">
         {data?.user ? (
           <>

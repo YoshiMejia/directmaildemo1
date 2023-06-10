@@ -9,8 +9,8 @@ const LoginPage = () => {
   return (
     <>
       <main className="flex flex-col items-center">
-        <div className="cloud-img flex relative mt-20 left-8">
-          <div className="relative text-2xl text-slate-50 text-center top-64 max-w-xl left-24">
+        <div className="cloud-img flex relative mt-20">
+          <div className="relative text-2xl text-slate-50 text-center top-64 max-w-xl left-12">
             <p>
               Only members of the WAC Google Organization will have access to
               this site.
@@ -21,7 +21,7 @@ const LoginPage = () => {
               </>
             ) : (
               <>
-                <div className="bg-white rounded-lg text-slate-500 pb-2 pl-4 pr-4 mt-2">
+                <div className="bg-white rounded-lg text-slate-500 pb-2 pl-4 pr-4 mt-2 w-fit relative left-36">
                   <Image
                     loading="lazy"
                     height="24"
