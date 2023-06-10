@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DownloadButton from '@/pages/components/DownloadButton';
+import DeleteButton from './components/DeleteButton';
 import { NavHead } from '@/app/components/NavHead';
 
 const Form = () => {
@@ -20,6 +21,9 @@ const Form = () => {
     formData.append('template', selectedTemplate);
     try {
       const response = await fetch('http://localhost:8000/convert', {
+        // const response = await fetch(
+        //   'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
+        //   {
         method: 'POST',
         body: formData,
       });
@@ -104,6 +108,7 @@ const Form = () => {
             {successfulConversion && (
               <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-52">
                 <DownloadButton />
+                <DeleteButton />
                 <button className="left-12 relative" onClick={handleViewForm}>
                   Convert more
                 </button>
