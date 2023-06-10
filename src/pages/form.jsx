@@ -81,7 +81,6 @@ const Form = () => {
       file:bg-blue-100 file:text-blue-400
       hover:file:bg-violet-100"
                   />
-                  <label for="csv-input">None</label>
                   <select
                     className="pr-2"
                     value={selectedTemplate}
