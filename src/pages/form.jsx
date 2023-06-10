@@ -52,12 +52,12 @@ const Form = () => {
       <main className="flex font-mono flex-col items-center">
         {/* <NavHead /> */}
         {viewForm && (
-          <div className="absolute z-10 top-96 text-blue-100 text-center text-xl w-450">
+          <div className="absolute z-10 top-80 text-blue-100 text-center text-xl w-450">
             <h2>Upload a CSV file and select a template from the list!</h2>
           </div>
         )}
         {successfulConversion && (
-          <div className="absolute z-10 top-96 text-blue-100 text-center text-2xl w-450">
+          <div className="absolute z-10 top-80 text-blue-100 text-center text-2xl w-450">
             <h2>Choose an option below</h2>
           </div>
         )}
@@ -65,30 +65,30 @@ const Form = () => {
         <div className="cloud-img flex relative mt-20">
           <div className="inset-0 flex items-center justify-center">
             {viewForm && (
-              <div
-                id="csv-form"
-                className="bg-white rounded-lg p-2 space-x-4 relative top-24 left-20"
-              >
-                <form onSubmit={handleSubmit} className="border-2">
+              <form onSubmit={handleSubmit}>
+                <div
+                  id="csv-form"
+                  className="bg-white rounded-lg p-2 space-x-4 relative top-16 left-40 w-80 border-2 overflow-hidden"
+                >
                   <input
                     type="file"
                     accept=".csv"
                     id="csv-input"
                     onChange={handleFileUpload}
-                    className="inline-block rounded pl-2 pb-[6px] pt-2 w-60 file:mr-4 file:py-2 file:px-4
+                    className="inline-block rounded pl-2 pb-[6px] pt-2 file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
       file:text-sm file:font-semibold
       file:bg-blue-100 file:text-blue-400
-      hover:file:bg-violet-100"
+      hover:file:bg-violet-100 "
                   />
                   <select
-                    className="pr-2"
+                    className="pr-2 relative left-20"
                     value={selectedTemplate}
                     onChange={(event) =>
                       setSelectedTemplate(event.target.value)
                     }
                   >
-                    <option value="none">Select a template</option>
+                    <option value="none">Template</option>
                     <option value="700v2">700v2</option>
                     <option value="702v2">702v2</option>
                     <option value="704v2">704v2</option>
@@ -100,20 +100,27 @@ const Form = () => {
                     <option value="740v2">740v2</option>
                     <option value="741v2">741v2</option>
                   </select>
+                </div>
+                <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="px-4 bg-stone-100 hover:bg-blue-50 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg"
+                    className=" active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg mr-4 py-2 px-4
+      rounded-full border-0
+      text-sm font-semibold
+      bg-blue-100 text-blue-400
+      hover:bg-violet-100 relative left-40 top-24"
                     onClick={handleSubmit}
                   >
                     Convert
                   </button>
-                </form>
-              </div>
+                </div>
+              </form>
             )}
             {successfulConversion && (
-              <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-52">
+              <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-40">
                 <DownloadButton />
-                <DeleteButton />
+                {/* hiding delete button until S3 permissions are refactored in the backend */}
+                {/* <DeleteButton /> */}
                 <button className="left-12 relative" onClick={handleViewForm}>
                   Convert more
                 </button>

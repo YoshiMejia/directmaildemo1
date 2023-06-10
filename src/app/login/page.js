@@ -10,7 +10,7 @@ const LoginPage = () => {
     <>
       <main className="flex flex-col items-center">
         <div className="cloud-img flex relative mt-20">
-          <div className="relative text-2xl text-slate-50 text-center top-64 max-w-xl left-12">
+          <div className="relative text-xl text-slate-50 text-center top-64 max-w-xl left-12">
             <p>
               Only members of the WAC Google Organization will have access to
               this site.
@@ -31,7 +31,7 @@ const LoginPage = () => {
                     alt="google logo"
                     src="https://authjs.dev/img/providers/google.svg"
                   ></Image>
-                  <button className="text-2xl" onClick={() => signIn('google')}>
+                  <button className="text-xl" onClick={() => signIn('google')}>
                     Click to sign in
                   </button>
                 </div>
