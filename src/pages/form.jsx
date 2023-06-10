@@ -73,6 +73,7 @@ const Form = () => {
                   <input
                     type="file"
                     accept=".csv"
+                    id="csv-input"
                     onChange={handleFileUpload}
                     className="inline-block rounded pl-2 pb-[6px] pt-2 w-60 file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
@@ -80,6 +81,7 @@ const Form = () => {
       file:bg-blue-100 file:text-blue-400
       hover:file:bg-violet-100"
                   />
+                  <label for="csv-input">None</label>
                   <select
                     className="pr-2"
                     value={selectedTemplate}
