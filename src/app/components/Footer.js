@@ -24,9 +24,9 @@ const Footer = () => {
               ></Image>
               You are currently logged in.
             </span>
-            <span className="float-right" onClick={() => signOut()}>
+            <Link className="float-right" onClick={() => signOut()}>
               Logout
-            </span>
+            </Link>
           </>
         ) : (
           <span className="float-right">
