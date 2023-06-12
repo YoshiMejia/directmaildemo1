@@ -11,7 +11,7 @@ const templates = () => {
       <div className="grid grid-cols-3  gap-4 max-w-7xl overflow-y-auto h-75 border-solid border-8 border-slate-400">
         <div className="image-container">
           <Image
-            src="/../public/701v2.png"
+            src="/701v2.png"
             width={450}
             height={375}
             alt="template named 701v2"
