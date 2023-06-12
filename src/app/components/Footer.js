@@ -22,18 +22,11 @@ const Footer = () => {
                 alt="user image"
                 className="inline mr-4"
               ></Image>
-              {/* <img
-                src={data?.user?.image}
-                height="25"
-                width="25"
-                alt="user image"
-                className="inline mr-4"
-              /> */}
               You are currently logged in.
             </span>
-            <span className="float-right" onClick={() => signOut()}>
+            <Link className="float-right" onClick={() => signOut()}>
               Logout
-            </span>
+            </Link>
           </>
         ) : (
           <span className="float-right">
