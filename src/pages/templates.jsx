@@ -94,7 +94,7 @@ const templates = () => {
             alt="template named 731v2"
           />
           <div className="image-overlay">
-            <span className="image-text font-mono">7031v2</span>
+            <span className="image-text font-mono">731v2</span>
           </div>
         </div>
         <div className="image-container">
