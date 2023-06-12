@@ -120,7 +120,7 @@ const Form = () => {
               <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-40">
                 <DownloadButton />
                 {/* hiding delete button until S3 permissions are refactored in the backend */}
-                {/* <DeleteButton /> */}
+                <DeleteButton />
                 <button className="left-12 relative" onClick={handleViewForm}>
                   Convert more
                 </button>
