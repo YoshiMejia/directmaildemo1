@@ -5,19 +5,19 @@ const clearBucket = async () => {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to clear the S3 bucket');
+      throw new Error('Failed to clear bucket');
     }
 
-    console.log('S3 bucket cleared successfully');
+    console.log('bucket cleared successfully');
   } catch (error) {
-    console.error('Error clearing the S3 bucket:', error);
+    console.error('Error clearing bucket:', error);
   }
 };
 
 const DeleteButton = () => {
   return (
     <div className="border-b-4">
-      <button onClick={clearBucket}>Clear S3 Bucket</button>
+      <button onClick={clearBucket}>Clear conversions</button>
     </div>
   );
 };
