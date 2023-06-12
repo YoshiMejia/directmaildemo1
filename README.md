@@ -1,35 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WAConverter Demo
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Introduction
+
+With this project, you can convert your CSV file to folder full of HTML documents that will easily upload to the Lob interface. Choose from one of many templates and load up the CSV with corresponding values. If you need to double check you're selecting the correct template please navigate to the template gallery for a quick refresher on the different options available. This project is built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
+
+## Features
+
+List the key features and functionalities of your project. Highlight what makes it unique or useful.
+
+- Next.js with Google Auth: Implement secure user authentication using Google Auth. Will be refactored to allow only members of our Google Workspace to access the application.
+- Quick CSV to HTML Conversion: Seamlessly convert CSV files to HTML format, allowing easy data visualization and rendering.
+- Easy ZIP Download: Download the converted HTML files as a compressed ZIP file for convenient sharing and offline use.
+- Template Gallery: Browse and choose from a gallery of available templates for the HTML conversion, providing a variety of styling options and layouts.
+
+## Demo
+
+dmd1.vercel.app
+
+## Installation
+
+```shell
+$ git clone https://github.com/YoshiMejia/directmaildemo1
+$ cd directmaildemo1
+$ npm install
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# directmaildemo1
