@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 import { useSession, signOut } from 'next-auth/react';
 
@@ -14,13 +15,20 @@ const Footer = () => {
         {data?.user ? (
           <>
             <span>
-              <img
+              <Image
                 src={data?.user?.image}
                 height="25"
                 width="25"
                 alt="user image"
                 className="inline mr-4"
-              />
+              ></Image>
+              {/* <img
+                src={data?.user?.image}
+                height="25"
+                width="25"
+                alt="user image"
+                className="inline mr-4"
+              /> */}
               You are currently logged in.
             </span>
             <span className="float-right" onClick={() => signOut()}>
