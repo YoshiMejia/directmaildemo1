@@ -22,7 +22,7 @@ const FileList = ({ fileList }) => {
           ))}
         </ul>
       ) : (
-        console.log('No files to display.')
+        <div>No files to show.</div>
       )}
     </div>
   );
