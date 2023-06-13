@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import DownloadButton from '@/pages/components/DownloadButton';
 import DeleteButton from './components/DeleteButton';
-import { NavHead } from '@/app/components/NavHead';
+import Link from 'next/link';
 
 const Form = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState('none');
   const [successfulConversion, setSuccessfulConversion] = useState(false);
   const [viewForm, setViewForm] = useState(true);
-  const [fileList, setFileList] = useState([]);
 
   const handleFileUpload = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -50,7 +49,6 @@ const Form = () => {
   return (
     <>
       <main className="flex font-mono flex-col items-center">
-        {/* <NavHead /> */}
         {viewForm && (
           <div className="absolute z-10 top-80 text-blue-100 text-center text-xl w-450">
             <h2>Upload a CSV file and select a template from the list!</h2>
@@ -119,11 +117,15 @@ const Form = () => {
             {successfulConversion && (
               <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-40">
                 <DownloadButton />
-                {/* hiding delete button until S3 permissions are refactored in the backend */}
                 <DeleteButton />
-                <button className="left-12 relative" onClick={handleViewForm}>
-                  Convert more
-                </button>
+                <div className="border-b-4">
+                  <Link href="/Previews">Preview Conversions</Link>
+                </div>
+                <div className="border-b-4">
+                  <button className="left-12 relative" onClick={handleViewForm}>
+                    Convert more
+                  </button>
+                </div>
               </div>
             )}
           </div>
