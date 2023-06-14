@@ -13,7 +13,7 @@ const FileList = ({ fileList }) => {
   return (
     <div>
       {Object.keys(fileList).length > 0 ? (
-        <div className="bg-white z-20 rounded-lg p-2 space-x-4 relative top-28 h-fit -left-12 w-80 border-2 overflow-hidden">
+        <div className="bg-white z-20 rounded-lg p-2 space-x-4 relative top-28 max-h-72 h-fit -left-12 w-80 border-2 overflow-y-scroll">
           <ul className="w-96">
             {Object.entries(fileList).map(([filename, content]) => (
               <li
