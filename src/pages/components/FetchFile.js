@@ -7,8 +7,17 @@ const FetchFiles = ({ onFilesFetched }) => {
   };
 
   return (
-    <div>
-      <button onClick={fetchFileData}>Fetch File Data</button>
+    <div className="h-fit">
+      <button
+        onClick={fetchFileData}
+        className="active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg mr-4 py-2 px-4
+      rounded-full border-0
+    font-semibold h-fit text-2xl 
+      bg-blue-100 text-blue-400
+      hover:bg-violet-100 relative left-56 top-64 z-0"
+      >
+        Fetch File Data
+      </button>
     </div>
   );
 };
