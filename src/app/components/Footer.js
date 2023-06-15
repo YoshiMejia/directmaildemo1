@@ -24,11 +24,11 @@ const Footer = () => {
                     alt="user image"
                     className="inline mr-4"
                   ></Image>
-                  You are currently logged in.
+                  Currently logged in.
                 </span>
               </li>
               <li>
-                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                <span className="text-sm text-gray-500 sm:text-center -left-20 dark:text-gray-400">
                   © 2023 WAConverter. All Rights Reserved.
                 </span>
               </li>
