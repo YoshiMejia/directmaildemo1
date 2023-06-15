@@ -60,7 +60,7 @@ export const NavHead = () => {
                 </Link>
               </li>
             )}
-            {pathname !== '/Form' && (
+            {pathname !== '/form' && (
               <li>
                 <Link
                   href="/form"
