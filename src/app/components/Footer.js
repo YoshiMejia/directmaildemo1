@@ -28,7 +28,7 @@ const Footer = () => {
                 </span>
               </li>
               <li>
-                <span className="text-sm text-gray-500 sm:text-center -left-20 dark:text-gray-400">
+                <span className="text-sm text-gray-500 sm:text-center relative -left-20 dark:text-gray-400">
                   © 2023 WAConverter. All Rights Reserved.
                 </span>
               </li>
