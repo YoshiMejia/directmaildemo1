@@ -11,15 +11,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2023 WAConverter . All Rights Reserved.
-        </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          <li>
-            {data?.user ? (
-              <>
-                <span>
+      <div className="w-full mx-auto max-w-screen-xl p-4 ">
+        <ul className="items-center mt-3 text-sm font-medium flex justify-between text-gray-500 dark:text-gray-400 sm:mt-0">
+          {data?.user ? (
+            <>
+              <li>
+                <span className="float-left">
                   <Image
                     src={data?.user?.image}
                     height="25"
@@ -29,14 +26,28 @@ const Footer = () => {
                   ></Image>
                   You are currently logged in.
                 </span>
+              </li>
+              <li>
+                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                  © 2023 WAConverter. All Rights Reserved.
+                </span>
+              </li>
+              <li>
                 <span
                   className="float-right cursor-pointer"
                   onClick={() => signOut()}
                 >
                   Logout
                 </span>
-              </>
-            ) : (
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <span className="text-sm float-left text-gray-500 sm:text-center dark:text-gray-400">
+                  © 2023 WAConverter. All Rights Reserved.
+                </span>
+              </li>
               <li>
                 <span className="float-right">
                   <Link
@@ -47,8 +58,8 @@ const Footer = () => {
                   </Link>
                 </span>
               </li>
-            )}
-          </li>
+            </>
+          )}
         </ul>
       </div>
     </footer>
