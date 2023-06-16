@@ -1,6 +1,7 @@
 const FetchFiles = ({ onFilesFetched }) => {
   const fetchFileData = () => {
-    fetch('http://localhost:8000/converted/success')
+    // fetch('http://localhost:8000/converted/success')
+    fetch('https://waconverter.us-west-1.elasticbeanstalk.com/clear-bucket')
       .then((response) => response.json())
       .then((data) => onFilesFetched(data.files))
       .catch((error) => console.error('Error fetching file data:', error));

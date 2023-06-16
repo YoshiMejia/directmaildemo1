@@ -2,7 +2,7 @@ const clearBucket = async () => {
   try {
     // const response = await fetch('http://localhost:8000/clear-bucket', {
     const response = await fetch(
-      'http://waconverter.us-west-1.elasticbeanstalk.com/clear-bucket',
+      'https://waconverter.us-west-1.elasticbeanstalk.com/clear-bucket',
       {
         method: 'DELETE',
       }

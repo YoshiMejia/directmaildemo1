@@ -6,7 +6,7 @@ const DownloadButton = () => {
       const response = await fetch(
         // 'http://localhost:8000/downloadfile'
         // 'http://localhost:8000/download_converted/converted'
-        'http://waconverter.us-west-1.elasticbeanstalk.com/downloadfile'
+        'https://waconverter.us-west-1.elasticbeanstalk.com/downloadfile'
       );
       if (!response.ok) {
         throw new Error('Failed to download ZIP file');

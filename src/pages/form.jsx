@@ -21,7 +21,7 @@ const Form = () => {
     try {
       // const response = await fetch('http://localhost:8000/convert', {
       const response = await fetch(
-        'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
+        'https://waconverter.us-west-1.elasticbeanstalk.com/convert',
         {
           method: 'POST',
           body: formData,
