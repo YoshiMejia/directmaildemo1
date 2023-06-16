@@ -19,13 +19,14 @@ const Form = () => {
     formData.append('csv', selectedFile);
     formData.append('template', selectedTemplate);
     try {
-      const response = await fetch('http://localhost:8000/convert', {
-        // const response = await fetch(
-        //   'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
-        //   {
-        method: 'POST',
-        body: formData,
-      });
+      // const response = await fetch('http://localhost:8000/convert', {
+      const response = await fetch(
+        'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
       if (!response.ok) {
         throw new Error(
           `Failed to convert CSV file (${response.status} ${response.statusText})`
@@ -35,7 +36,7 @@ const Form = () => {
       console.log(convertedData);
       setSuccessfulConversion(true);
       handleViewForm();
-      setFileList(convertedData);
+      // setFileList(convertedData);
       // check back if setFileList/fileList state values are needed now that download button is working, also check if ConvertedFiles component is needed
     } catch (error) {
       console.error(error);
