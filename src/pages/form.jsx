@@ -136,16 +136,14 @@ const Form = () => {
                 <div className="border-b-4">
                   <DownloadButton />
                 </div>
-                <div className="border-b-4">
-                  <DeleteButton />
-                </div>
-                <div className="border-b-4">
+                <div className="border-b-4 text-center">
                   <Link href="/Previews">Preview Conversions</Link>
                 </div>
-                <div className="border-b-4">
-                  <button className="left-12 relative" onClick={handleViewForm}>
-                    Convert more
-                  </button>
+                <div className="border-b-4 text-center">
+                  <DeleteButton />
+                </div>
+                <div className="border-b-4 text-center">
+                  <button onClick={handleViewForm}>Convert more</button>
                 </div>
               </div>
             )}
