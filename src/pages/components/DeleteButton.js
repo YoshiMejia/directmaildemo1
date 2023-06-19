@@ -28,7 +28,7 @@ const DeleteButton = () => {
   return (
     <>
       <button id="deleteFiles-btn" onClick={clearBucket}>
-        Clear conversions
+        Clear Conversions
       </button>
     </>
   );
