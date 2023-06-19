@@ -1,17 +1,15 @@
 import Image from 'next/image';
-import { NavHead } from '@/app/components/NavHead';
 
 const templates = () => {
   return (
     <main className="flex flex-col items-center">
-      {/* <NavHead /> */}
       <div className="flex items-center justify-center py-10 text-2xl font-mono relative -left-4">
         <h1>Available templates</h1>
       </div>
       <div className="grid grid-cols-3  gap-4 max-w-7xl overflow-y-auto h-75 border-solid border-8 border-slate-400">
         <div className="image-container">
           <Image
-            src="/700V2DUMMY.png"
+            src="/700V2.png"
             width={450}
             height={375}
             alt="template named 700v2"
@@ -22,7 +20,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/702V2DUMMY.png"
+            src="/702V2.png"
             width={450}
             height={375}
             alt="template named 702v2"
@@ -33,7 +31,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/704V2DUMMY.png"
+            src="/704V2.png"
             width={450}
             height={375}
             alt="template named 704v2"
@@ -44,7 +42,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/706V2DUMMY.png"
+            src="/706V2.png"
             width={450}
             height={375}
             alt="template named 706v2"
@@ -55,7 +53,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/712V2DUMMY.png"
+            src="/712V2.png"
             width={450}
             height={375}
             alt="template named 712v2"
@@ -66,7 +64,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/720V2DUMMY.png"
+            src="/720V2.png"
             width={450}
             height={375}
             alt="template named 720v2"
@@ -77,7 +75,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/721V2DUMMY.png"
+            src="/721V2.png"
             width={450}
             height={375}
             alt="template named 721v2"
@@ -88,7 +86,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/731V2DUMMY.png"
+            src="/731V2.png"
             width={450}
             height={375}
             alt="template named 731v2"
@@ -99,7 +97,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/740V2DUMMY.png"
+            src="/740V2.png"
             width={450}
             height={375}
             alt="template named 740v2"
@@ -110,7 +108,7 @@ const templates = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/741V2DUMMY.png"
+            src="/741V2.png"
             width={450}
             height={375}
             alt="template named 741v2"
