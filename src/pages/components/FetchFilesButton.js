@@ -7,7 +7,7 @@ const FetchFilesButton = ({ onFilesFetched }) => {
       .then((response) => response.json())
       .then((data) => onFilesFetched(data.files))
       .catch((error) => console.error('Error fetching file data:', error));
-    const button = document.getElementById('fetch-files');
+    const button = document.getElementById('fetch-btn');
     button.classList.add('hidden');
   };
 
@@ -15,7 +15,7 @@ const FetchFilesButton = ({ onFilesFetched }) => {
     <div className="h-fit">
       <button
         onClick={fetchFileData}
-        id="fetch-files"
+        id="fetch-btn"
         className="active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg mr-4 py-2 px-4
       rounded-full border-0
     font-semibold h-fit text-2xl 
