@@ -13,20 +13,34 @@ const Form = () => {
     setSelectedFile(event.target.files[0]);
   };
 
+  const validateForm = () => {
+    const csvInput = document.getElementById('csv-input');
+    const templateSelect = document.getElementById('template-select');
+    if (csvInput.files.length !== 1) {
+      alert('Please make sure to upload 1 CSV file, no more and no less!');
+      return false; // Prevent form submission
+    } else if (templateSelect.value === 'none') {
+      alert('Please select a template.');
+      return false; // Prevent form submission
+    } else {
+      return true;
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    validateForm();
     const formData = new FormData();
     formData.append('csv', selectedFile);
     formData.append('template', selectedTemplate);
     try {
-      // const response = await fetch('http://localhost:8000/convert', {
-      const response = await fetch(
-        'https://waconverter.us-west-1.elasticbeanstalk.com/convert',
-        {
-          method: 'POST',
-          body: formData,
-        }
-      );
+      const response = await fetch('http://localhost:8000/convert', {
+        // const response = await fetch(
+        //   'https://waconverter.us-west-1.elasticbeanstalk.com/convert',
+        //   {
+        method: 'POST',
+        body: formData,
+      });
       if (!response.ok) {
         throw new Error(
           `Failed to convert CSV file (${response.status} ${response.statusText})`
@@ -36,8 +50,6 @@ const Form = () => {
       console.log(convertedData);
       setSuccessfulConversion(true);
       handleViewForm();
-      // setFileList(convertedData);
-      // check back if setFileList/fileList state values are needed now that download button is working, also check if ConvertedFiles component is needed
     } catch (error) {
       console.error(error);
     }
@@ -79,10 +91,13 @@ const Form = () => {
       file:text-sm file:font-semibold
       file:bg-blue-100 file:text-blue-400
       hover:file:bg-violet-100 "
+                    required
                   />
                   <select
                     className="pr-2 relative left-20"
+                    id="template-select"
                     value={selectedTemplate}
+                    required
                     onChange={(event) =>
                       setSelectedTemplate(event.target.value)
                     }
@@ -117,8 +132,12 @@ const Form = () => {
             )}
             {successfulConversion && (
               <div className="bg-white rounded-lg text-xl p-6 space-x-4 relative top-16 left-40">
-                <DownloadButton />
-                <DeleteButton />
+                <div className="border-b-4">
+                  <DownloadButton />
+                </div>
+                <div className="border-b-4">
+                  <DeleteButton />
+                </div>
                 <div className="border-b-4">
                   <Link href="/Previews">Preview Conversions</Link>
                 </div>
