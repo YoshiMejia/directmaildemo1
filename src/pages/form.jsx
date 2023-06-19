@@ -33,6 +33,7 @@ const Form = () => {
     const formData = new FormData();
     formData.append('csv', selectedFile);
     formData.append('template', selectedTemplate);
+    console.log(formData);
     try {
       const response = await fetch('http://localhost:8000/convert', {
         // const response = await fetch(
