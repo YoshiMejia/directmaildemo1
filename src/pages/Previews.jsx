@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import FileList from './components/FileList';
-import FetchFiles from './components/FetchFile';
+import FetchFilesButton from './components/FetchFilesButton';
+import DownloadButton from './components/DownloadButton';
+import DeleteButton from './components/DeleteButton';
 
 const Previews = () => {
   const [viewFiles, setviewFiles] = useState(false);
@@ -22,11 +24,29 @@ const Previews = () => {
   return (
     <main className="flex flex-col items-center">
       <div className="cloud-img flex relative mt-20">
-        <FetchFiles onFilesFetched={handleFilesFetched} />
-        {/* <div className="grid grid-cols-3  gap-4 max-w-7xl overflow-y-auto h-75 border-solid border-8 border-slate-400"> 
- <div className="image-container"> */}
+        <FetchFilesButton onFilesFetched={handleFilesFetched} />
         {viewFiles && (
           <>
+            <div className="inline-flex">
+              <div
+                className="active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg mr-4 py-2 px-4
+      rounded-full border-0
+    font-semibold h-fit text-lg 
+      bg-blue-100 text-blue-400
+      hover:bg-violet-100 relative top-28 left-36 w-48"
+              >
+                <DownloadButton />
+              </div>
+              <div
+                className="active:bg-red-200 focus:outline-none focus:ring focus:ring-red-300 focus:rounded-lg mr-4 py-2 px-4
+      rounded-full border-0
+    font-semibold h-fit text-lg 
+      bg-red-100 text-red-400
+      hover:bg-blue-100 relative top-28 left-36"
+              >
+                <DeleteButton />
+              </div>
+            </div>
             <FileList fileList={fileList} />
           </>
         )}
