@@ -9,15 +9,21 @@ const Previews = () => {
   const [fileList, setFileList] = useState([]);
 
   const handleFilesFetched = (fetchedFiles) => {
-    setFileList(
-      fetchedFiles.reduce((acc, file) => {
-        const content = file.content;
-        return {
-          ...acc,
-          [file.filename]: content,
-        };
-      }, {})
-    );
+    const sortedFiles = fetchedFiles.sort((a, b) => {
+      const regex = /-(\d+)-/;
+      const numA = Number(a.filename.match(regex)[1]);
+      const numB = Number(b.filename.match(regex)[1]);
+      return numA - numB;
+    });
+
+    const updatedFileList = sortedFiles.reduce((acc, file) => {
+      const content = file.content;
+      return {
+        ...acc,
+        [file.filename]: content,
+      };
+    }, {});
+    setFileList(updatedFileList);
     setviewFiles(true);
   };
 
