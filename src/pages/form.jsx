@@ -64,7 +64,7 @@ const Form = () => {
     <>
       <main className="flex font-mono flex-col items-center">
         {viewForm && (
-          <div className="absolute z-10 top-80 text-blue-100 text-center text-xl w-450">
+          <div className="absolute z-10 top-80 text-blue-100 text-center text-xl max-w-sm">
             <h2>Upload a CSV file and select a template from the list!</h2>
           </div>
         )}
