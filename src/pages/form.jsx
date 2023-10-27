@@ -16,12 +16,19 @@ const Form = () => {
   const validateForm = () => {
     const csvInput = document.getElementById('csv-input');
     const templateSelect = document.getElementById('template-select');
+    const allowedExtensions = /(\.csv)$/i;
+    const fileType = csvInput.value;
+
     if (csvInput.files.length !== 1) {
       alert('Please make sure to upload 1 CSV file, no more and no less!');
       return false; // Prevent form submission
     } else if (templateSelect.value === 'none') {
       alert('Please select a template.');
       return false; // Prevent form submission
+    } else if (!allowedExtensions.exec(fileType)) {
+      alert('Please upload a CSV file.');
+      csvInput.value = '';
+      return false;
     } else {
       return true;
     }
@@ -35,13 +42,14 @@ const Form = () => {
     formData.append('template', selectedTemplate);
     console.log(formData);
     try {
-      const response = await fetch('http://localhost:8000/convert', {
-        // const response = await fetch(
-        //   'https://waconverter.us-west-1.elasticbeanstalk.com/convert',
-        //   {
-        method: 'POST',
-        body: formData,
-      });
+      // const response = await fetch('http://localhost:8000/convert', {
+      const response = await fetch(
+        'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
       if (!response.ok) {
         throw new Error(
           `Failed to convert CSV file (${response.status} ${response.statusText})`
