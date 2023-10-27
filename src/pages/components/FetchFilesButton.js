@@ -1,9 +1,7 @@
 const FetchFilesButton = ({ onFilesFetched }) => {
   const fetchFileData = () => {
-    fetch('http://localhost:8000/converted/success')
-      // fetch(
-      //   'https://waconverter.us-west-1.elasticbeanstalk.com/converted/success'
-      // )
+    // fetch('http://localhost:8000/converted/success')
+    fetch('http://waconverter.us-west-1.elasticbeanstalk.com/converted/success')
       .then((response) => response.json())
       .then((data) => onFilesFetched(data.files))
       .catch((error) => console.error('Error fetching file data:', error));
