@@ -21,7 +21,7 @@ const LoginPage = () => {
               </>
             ) : (
               <>
-                <div className="bg-white rounded-lg text-slate-500 pb-2 pl-4 pr-4 mt-2 w-fit relative left-36">
+                <div className="bg-white rounded-lg text-slate-500 pb-2 pl-4 pr-8 mt-6 w-fit relative left-40">
                   <Image
                     loading="lazy"
                     height="24"
