@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DownloadButton from '@/pages/components/DownloadButton';
+import DownloadButton from '../pages/components/DownloadButton';
 import DeleteButton from './components/DeleteButton';
 import Link from 'next/link';
 
