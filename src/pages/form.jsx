@@ -42,14 +42,13 @@ const Form = () => {
     formData.append('template', selectedTemplate);
     console.log(formData);
     try {
-      // const response = await fetch('http://localhost:8000/convert', {
-      const response = await fetch(
-        'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
-        {
-          method: 'POST',
-          body: formData,
-        }
-      );
+      const response = await fetch('http://localhost:8000/convert', {
+        // const response = await fetch(
+        //   'http://waconverter.us-west-1.elasticbeanstalk.com/convert',
+        //   {
+        method: 'POST',
+        body: formData,
+      });
       if (!response.ok) {
         throw new Error(
           `Failed to convert CSV file (${response.status} ${response.statusText})`
