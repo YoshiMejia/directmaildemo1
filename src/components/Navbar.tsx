@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import MaxWidthWrapper from '../pages/components/MaxWidthWrapper';
+import MaxWidthWrapper from '../app/components/MaxWidthWrapper';
 import { buttonVariants } from '../../@/components/ui/button';
 
 const Navbar = () => {
