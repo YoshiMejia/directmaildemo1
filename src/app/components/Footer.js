@@ -10,7 +10,7 @@ const Footer = () => {
   console.log('log data, inside Footer:', data);
 
   return (
-    <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+    <footer className="bg-white rounded-lg shadow mx-4 mt-32 dark:bg-gray-800">
       <div className="w-full mx-auto max-w-screen-xl p-4 ">
         <ul className="items-center mt-3 text-sm font-medium flex justify-between text-gray-500 dark:text-gray-400 sm:mt-0">
           {data?.user ? (
