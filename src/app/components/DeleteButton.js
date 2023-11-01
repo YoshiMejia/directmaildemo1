@@ -4,12 +4,13 @@ const clearBucket = async () => {
 
   if (confirmed) {
     try {
-      const response = await fetch('http://localhost:8000/clear-bucket', {
-        // const response = await fetch(
-        //   'https://waconverter.us-west-1.elasticbeanstalk.com/clear-bucket',
-        //   {
-        method: 'DELETE',
-      });
+      // const response = await fetch('http://localhost:8000/clear-bucket', {
+      const response = await fetch(
+        'http://waconverter.us-west-1.elasticbeanstalk.com/clear-bucket',
+        {
+          method: 'DELETE',
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Failed to clear bucket');
