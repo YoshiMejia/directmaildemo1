@@ -5,6 +5,7 @@ import MaxWidthWrapper from '../pages/components/MaxWidthWrapper';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from '../../@/components/ui/button';
+import Decoration from '../app/components/Decoration';
 
 export default function Home() {
   return (
@@ -14,9 +15,10 @@ export default function Home() {
           CSV Converter is under construction
         </p>
       </div>
+      <Decoration />
       <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
         Convert your CSV files to HTML{' '}
-        <span className="text-orange-500">in seconds!</span>
+        <span className="text-blue-400">in seconds!</span>
       </h1>
       <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
         CSV Converter is perfect for any size CSV file! Simply upload your CSV
