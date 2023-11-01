@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import FileList from './components/FileList';
-import FetchFilesButton from './components/FetchFilesButton';
-import DownloadButton from './components/DownloadButton';
-import DeleteButton from './components/DeleteButton';
+import FileList from '../app/components/FileList';
+import FetchFilesButton from '../app/components/FetchFilesButton';
+import DownloadButton from '../app/components/DownloadButton';
+import DeleteButton from '../app/components/DeleteButton';
 
 const Previews = () => {
   const [viewFiles, setviewFiles] = useState(false);

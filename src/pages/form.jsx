@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import DownloadButton from '../pages/components/DownloadButton';
-import DeleteButton from './components/DeleteButton';
+import DownloadButton from '../app/components/DownloadButton';
+import DeleteButton from '../app/components/DeleteButton';
 import Link from 'next/link';
-import MaxWidthWrapper from '../pages/components/MaxWidthWrapper';
+import MaxWidthWrapper from '../app/components/MaxWidthWrapper';
 import Decoration from '../app/components/Decoration';
 
 import { ArrowRight } from 'lucide-react';

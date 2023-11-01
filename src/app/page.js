@@ -1,7 +1,7 @@
 import Image from 'next/image';
 // import LoginModal from '../pages/components/LoginModal';
 // import { NavHead } from '../app/components/NavHead';
-import MaxWidthWrapper from '../pages/components/MaxWidthWrapper';
+import MaxWidthWrapper from '../app/components/MaxWidthWrapper';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from '../../@/components/ui/button';
