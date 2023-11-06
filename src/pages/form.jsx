@@ -74,7 +74,7 @@ const Form = () => {
   };
   return (
     <>
-      <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
+      <MaxWidthWrapper className="mb-12 mt-28 sm:my-40 flex flex-col items-center justify-center text-center">
         <Decoration />
         {viewForm && (
           <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
