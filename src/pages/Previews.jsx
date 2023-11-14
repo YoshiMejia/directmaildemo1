@@ -3,6 +3,8 @@ import FileList from '../app/components/FileList';
 import FetchFilesButton from '../app/components/FetchFilesButton';
 import DownloadButton from '../app/components/DownloadButton';
 import DeleteButton from '../app/components/DeleteButton';
+import MaxWidthWrapper from '../app/components/MaxWidthWrapper';
+import Decoration from '../app/components/Decoration';
 
 const Previews = () => {
   const [viewFiles, setviewFiles] = useState(false);
@@ -28,36 +30,47 @@ const Previews = () => {
   };
 
   return (
-    <main className="flex flex-col items-center">
-      <div className="cloud-img flex relative mt-20">
-        <FetchFilesButton onFilesFetched={handleFilesFetched} />
-        {viewFiles && (
-          <>
-            <div className="inline-flex">
-              <div
-                className="active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg mr-4 py-2 px-4
+    <MaxWidthWrapper className="mb-12 mt-28 sm:my-40 flex flex-col items-center justify-center text-center">
+      <Decoration />
+      <main className="min-h-[45vh]">
+        <div className="">
+          <div className=" mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 bg-white/50">
+            <p className="text-sm font-semibold text-gray-700">
+              Press the button below to see what conversions you currently have
+              stored!
+            </p>
+          </div>
+          <FetchFilesButton onFilesFetched={handleFilesFetched} />
+          {viewFiles && (
+            <>
+              <div id="preview-files">
+                <div className="inline-flex m-8">
+                  <div
+                    className="active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300 focus:rounded-lg mr-4 py-2 px-4
       rounded-full border-0
     font-semibold h-fit text-lg 
       bg-blue-100 text-blue-400
-      hover:bg-violet-100 relative top-28 left-36 w-48"
-              >
-                <DownloadButton />
-              </div>
-              <div
-                className="active:bg-red-200 focus:outline-none focus:ring focus:ring-red-300 focus:rounded-lg mr-4 py-2 px-4
+      hover:bg-red-100 relative "
+                  >
+                    <DownloadButton />
+                  </div>
+                  <div
+                    className="active:bg-red-200 focus:outline-none focus:ring focus:ring-red-300 focus:rounded-lg mr-4 py-2 px-4
       rounded-full border-0
     font-semibold h-fit text-lg 
       bg-red-100 text-red-400
-      hover:bg-blue-100 relative top-28 left-36"
-              >
-                <DeleteButton />
+      hover:bg-blue-100 relative"
+                  >
+                    <DeleteButton />
+                  </div>
+                </div>
+                <FileList fileList={fileList} />
               </div>
-            </div>
-            <FileList fileList={fileList} />
-          </>
-        )}
-      </div>
-    </main>
+            </>
+          )}
+        </div>
+      </main>
+    </MaxWidthWrapper>
   );
 };
 
