@@ -10,8 +10,11 @@ const templates = () => {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mt-16 flow-root sm:mt-24">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-              <div className="flex items-center justify-center py-10 text-2xl relative -left-4">
-                <h1>Available templates</h1>
+              <div className=" mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 bg-white/50">
+                <p className="text-sm font-semibold text-gray-700">
+                  These are the templates which are available to you on our
+                  Convert page!
+                </p>
               </div>
               <div className="grid grid-cols-3 gap-4 rounded-xl p-2 max-w-7xl overflow-y-auto h-75 border-solid border-8 border-slate-200">
                 <div className="image-container">
