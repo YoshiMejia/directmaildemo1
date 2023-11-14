@@ -29,7 +29,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="text-sm text-gray-500 sm:text-center relative -left-20 dark:text-gray-400">
-                  © 2023 WAConverter. All Rights Reserved.
+                  © 2023 CSV Converter. All Rights Reserved.
                 </span>
               </li>
               <li>
@@ -45,7 +45,7 @@ const Footer = () => {
             <>
               <li>
                 <span className="text-sm float-left text-gray-500 sm:text-center dark:text-gray-400">
-                  © 2023 WAConverter. All Rights Reserved.
+                  © 2023 CSV Converter. All Rights Reserved.
                 </span>
               </li>
               <li>

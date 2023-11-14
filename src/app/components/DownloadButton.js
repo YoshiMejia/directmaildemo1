@@ -33,7 +33,7 @@ const DownloadButton = () => {
   return (
     <>
       <button id="downloadFiles-btn" onClick={handleDownload}>
-        Download Converted Files
+        Download Conversions
       </button>
     </>
   );
