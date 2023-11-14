@@ -50,7 +50,7 @@ const Previews = () => {
       rounded-full border-0
     font-semibold h-fit text-lg 
       bg-blue-100 text-blue-400
-      hover:bg-red-100 relative "
+      hover:bg-blue-300 relative "
                   >
                     <DownloadButton />
                   </div>
@@ -59,7 +59,7 @@ const Previews = () => {
       rounded-full border-0
     font-semibold h-fit text-lg 
       bg-red-100 text-red-400
-      hover:bg-blue-100 relative"
+      hover:bg-red-300 relative"
                   >
                     <DeleteButton />
                   </div>
